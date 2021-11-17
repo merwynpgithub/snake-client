@@ -17,7 +17,12 @@ const connect = function () {
   });
   const name = "SMP";
   conn.write(`Name: ${name}`);
-
+  // conn.on("connect", () => {
+  //   console.log('"Move: up" - move up one square (unless facing down)');
+  //   console.log('"Move: down" - move down one square (unless facing up)');
+  //   console.log('"Move: left" - move left one square (unless facing right)');
+  //   console.log('"Move: right" - move left one square (unless facing left)');
+  // });
   return conn;
 };
 
