@@ -1,4 +1,4 @@
-const { commandObj } = require('./constants');
+const { name, commandObj } = require('./constants');
 // setup interface to handle user input from stdin
 let connection;
 const setupInput = function (conn) {
@@ -14,6 +14,7 @@ const handleUserInput = function (key) {
   // your code here
   // \u0003 maps to ctrl+c input
   if (key === '\u0003') {
+    console.log(`${name} has left`);
     process.exit();
   }
   const keyArray = Object.keys(commandObj);
