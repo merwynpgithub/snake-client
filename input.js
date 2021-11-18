@@ -27,5 +27,14 @@ if (key === 's') {
 if (key === 'd') {
   connection.write("Move: right");
 }
+if (key === 'h') {
+  connection.write("Say: HI");
+}
+if (key === 'g') {
+  connection.write("Say: GTG");
+}
+if (key === 'b') {
+  connection.write("Say: BYE");
+}
 };
 module.exports = setupInput;
