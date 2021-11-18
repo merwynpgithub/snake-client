@@ -13,14 +13,14 @@ const setupInput = function (conn) {
 const handleUserInput = function (key) {
   // your code here
   // \u0003 maps to ctrl+c input
-if (key === '\u0003') {
-  process.exit();
-}
-const keyArray = Object.keys(commandObj);
-const commandArray = Object.values(commandObj);
-let index = keyArray.indexOf(key);
-if (index > -1) {
-  connection.write(commandArray[index]);
-}
+  if (key === '\u0003') {
+    process.exit();
+  }
+  const keyArray = Object.keys(commandObj);
+  const commandArray = Object.values(commandObj);
+  let index = keyArray.indexOf(key);
+  if (index > -1) {
+    connection.write(commandArray[index]);
+  }
 };
 module.exports = setupInput;
