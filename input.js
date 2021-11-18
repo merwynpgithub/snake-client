@@ -1,3 +1,4 @@
+const { commandObj } = require('./constants');
 // setup interface to handle user input from stdin
 let connection;
 const setupInput = function (conn) {
@@ -15,26 +16,11 @@ const handleUserInput = function (key) {
 if (key === '\u0003') {
   process.exit();
 }
-if (key === 'w') {
-  connection.write("Move: up");
-}
-if (key === 'a') {
-  connection.write("Move: left");
-}
-if (key === 's') {
-  connection.write("Move: down");
-}
-if (key === 'd') {
-  connection.write("Move: right");
-}
-if (key === 'h') {
-  connection.write("Say: HI");
-}
-if (key === 'g') {
-  connection.write("Say: GTG");
-}
-if (key === 'b') {
-  connection.write("Say: BYE");
+const keyArray = Object.keys(commandObj);
+const commandArray = Object.values(commandObj);
+let index = keyArray.indexOf(key);
+if (index > -1) {
+  connection.write(commandArray[index]);
 }
 };
 module.exports = setupInput;
